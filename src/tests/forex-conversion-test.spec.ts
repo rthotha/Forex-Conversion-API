@@ -2,7 +2,6 @@ import {test,expect} from '@playwright/test';
 import { getForexData } from '../utils/api-util'
 import { getStartDateByWeek,calculateAverageForex } from '../utils/helper-methods';
 import Series from '../seriesNames';
-import exp from 'constants';
 
 const numberOfWeeks = 10;
 const startDate = getStartDateByWeek(numberOfWeeks);
@@ -50,7 +49,6 @@ test('Verify when Series Name is invalid',async()=>{
     expect(jsonResponse.message).toBe(`Series ${seriesValue} not found.`);
 
 })
-
 
 test('Verify when Start Date is greater than End Date',async()=>{
 
